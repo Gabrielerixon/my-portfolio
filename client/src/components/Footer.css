@@ -1,0 +1,14 @@
+/* src/components/Footer.css */
+
+.footer {
+  text-align: center;
+  padding: 1rem 2rem;
+  background-color: #E0DDD4; /* White Coffee instead of Rose Vale */
+  color: #8D7705;
+}
+
+/* If you want to keep the text small or bigger, just adjust here */
+.footer p {
+  font-size: 1rem;
+  margin: 0;
+}

@@ -1,0 +1,56 @@
+/* src/pages/Home.css */
+
+.home-container {
+    padding: 2rem 0;
+  }
+  
+  .hero {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* In your Home.css or wherever your hero is styled: */
+.hero h1 {
+  font-family: 'MANGRO', serif;
+  font-size: 3rem;
+  
+  text-transform: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: #8D7705; /* or #4F3D05 to go a bit darker */
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #8D7705;
+}
+
+
+  .bento-grid {
+    display: grid;
+    gap: 1rem;
+    /* Mobile-first: 1 column */
+    grid-template-columns: 1fr;
+  }
+  
+  /* For tablets and up */
+  @media (min-width: 600px) {
+    .bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* For larger desktops */
+  @media (min-width: 1024px) {
+    .bento-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .grid-item {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+  

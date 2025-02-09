@@ -1,0 +1,27 @@
+/* src/styles/globals.css */
+/* src/styles/globals.css */
+@import './fonts.css';
+
+/* Then your resets or other global rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* etc. */
+
+
+/* Main body background: White Coffee (#E0DDD4).
+   Main text color: #8D7705. */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #E0DDD4;
+  color: #8D7705;
+  line-height: 1.5;
+}
+
+/* Links default to the main text color */
+a {
+  text-decoration: none;
+  color: inherit;
+}

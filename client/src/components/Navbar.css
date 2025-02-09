@@ -1,0 +1,78 @@
+/* src/components/Navbar.css */
+
+/* 
+   Rose Vale background (#A8474D)
+   Light text (#DAD2BC)
+*/
+.navbar {
+  background-color: #A8474D;
+  color: #f0e8d2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Increase top/bottom padding to make navbar taller */
+  padding: 4rem 3rem;  /* e.g. 2rem vertically, 3rem horizontally */
+}
+
+/* Brand/Logo */
+.navbar-logo {
+  /* Larger font for a big, bold brand name */
+  font-family: 'MANGRO', serif;
+  font-size: 2rem;   
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin: 1rem 0rem 1rem 0rem ;
+}
+
+/* Main navigation links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem; /* extra gap between links */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  /* Slightly bigger text for clarity in a taller navbar */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f0e8d2;
+  transition: opacity 0.3s ease;
+  line-height: 1.4; /* control line spacing within the link */
+}
+
+.navbar-links li a:hover {
+  opacity: 0.8;
+}
+
+/* Right side: Social icons container */
+.navbar-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Circle placeholders for icons (LinkedIn, Instagram, Fiverr) */
+.social-icon {
+  display: inline-block;
+  background-color: #f0e8d2; 
+  color: #A8474D;
+  
+  /* Bigger circle so it looks proportional in a tall navbar */
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+}
