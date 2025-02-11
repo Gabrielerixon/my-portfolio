@@ -18,6 +18,11 @@ body {
   background-color: #E0DDD4;
   color: #8D7705;
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url("https://www.transparenttextures.com/patterns/cutcube.png");
+  background-repeat: repeat;
 }
 
 /* Links default to the main text color */

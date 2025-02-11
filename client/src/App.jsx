@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import './styles/layout.css'; // We'll create layout-specific CSS
+import AboutMe from './pages/AboutMe';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<AboutMe />} />
         </Routes>
 
         <Footer />

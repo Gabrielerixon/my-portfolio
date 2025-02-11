@@ -3,21 +3,41 @@ import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // For now, just log the form data
-    console.log('Form Submitted:', formData);
-    alert('Form submitted! (Check console for data)');
-    // In future steps, we'll send this to our Node server via fetch.
+    setStatus('Sending...');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('Error sending message. Please try again later.');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('Error sending message. Please try again later.');
+    }
   };
 
   return (
@@ -25,20 +45,18 @@ const Contact = () => {
       <h1>Contact Me</h1>
       <form className="contact-form" onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input
+        <input 
           type="text"
           name="name"
-          placeholder="Your name"
           value={formData.name}
           onChange={handleChange}
           required
         />
 
         <label>Email:</label>
-        <input
+        <input 
           type="email"
           name="email"
-          placeholder="Your email"
           value={formData.email}
           onChange={handleChange}
           required
@@ -47,7 +65,6 @@ const Contact = () => {
         <label>Message:</label>
         <textarea
           name="message"
-          placeholder="Your message"
           value={formData.message}
           onChange={handleChange}
           required
@@ -55,6 +72,8 @@ const Contact = () => {
 
         <button type="submit">Send</button>
       </form>
+
+      {status && <p className="contact-status">{status}</p>}
     </div>
   );
 };

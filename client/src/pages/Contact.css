@@ -1,42 +1,65 @@
 /* src/pages/Contact.css */
 
 .contact-page {
-    padding: 2rem 0;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .contact-page h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .contact-form label {
-    font-weight: bold;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.5rem;
-    font-size: 1rem;
-  }
-  
-  .contact-form button {
-    background-color: #2F3A8F;
-    color: #fff;
-    border: none;
-    padding: 0.75rem;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-  }
-  
-  .contact-form button:hover {
-    opacity: 0.8;
-  }
-  
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-page h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-family: 'MANGRO', serif;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  /* So the form background stands out a bit */
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none; 
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #A8474D;
+}
+
+.contact-form button {
+  background-color: #A8474D;
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
+}
+
+.contact-status {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
