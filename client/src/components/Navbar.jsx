@@ -26,6 +26,7 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/projects">Projects</Link></li>
         <li><Link to="/contact">Contact</Link></li>
+        <li><Link to="/auth">Login</Link></li>
       </ul>
 
       {/* Desktop Socials */}
@@ -57,6 +58,7 @@ const Navbar = () => {
             <li onClick={closeMenu}><Link to="/">Home</Link></li>
             <li onClick={closeMenu}><Link to="/projects">Projects</Link></li>
             <li onClick={closeMenu}><Link to="/contact">Contact</Link></li>
+            <li onClick={closeMenu}><Link to="/auth">Login</Link></li>
           </ul>
 
           {/* Larger icons at the bottom */}

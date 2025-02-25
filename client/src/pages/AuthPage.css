@@ -1,0 +1,236 @@
+/* src/pages/AuthPage.css */
+
+/* Container for everything */
+.auth-container {
+    background-color: #fff;
+    width: 900px;
+    max-width: 100%;
+    min-height: 550px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex; /* We use flex for the panel side-by-side. */
+  }
+  
+  /* FORM PANELS */
+  .form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* SIGN IN */
+  .sign-in-container {
+    left: 0;
+    z-index: 2;
+  }
+  
+  /* SIGN UP */
+  .sign-up-container {
+    left: 50%;
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  /* Common form styling */
+  form {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  form h1 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .social-container {
+    margin: 1rem 0;
+  }
+  
+  .social {
+    border: 1px solid #999;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+    width: 40px; height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .social i {
+    font-size: 1.1rem;
+  }
+  
+  form span {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 0.8rem;
+  }
+  
+  form input {
+    background-color: #eee;
+    border: none;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 4px;
+  }
+  
+  .forgot-link {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #666;
+  }
+  
+  form button {
+    border: none;
+    border-radius: 20px;
+    padding: 0.6rem 1.5rem;
+    background-color: #A8474D;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  form button:hover {
+    transform: scale(1.03);
+  }
+  
+  /* OVERLAY CONTAINER & PANELS */
+  .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+  }
+  
+  .overlay {
+    background: linear-gradient(to right, #A8474D, #E56576);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .overlay-panel {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 0; width: 50%; height: 100%;
+    transform: translateX(0);
+  }
+  
+  .overlay-left {
+    transform: translateX(0);
+  }
+  
+  .overlay-right {
+    right: 0;
+    transform: translateX(0);
+  }
+  
+  .overlay-panel h1 {
+    font-size: 1.8rem; /* slightly smaller than 2rem so it doesn't push content off */
+    margin-bottom: 0.5rem;
+  }
+  
+  .overlay-panel p {
+    font-size: 1rem;
+    margin: 0.5rem auto 1.5rem; /* auto left/right centers it */
+    max-width: 300px; /* limit width so it wraps gracefully */
+    line-height: 1.4;
+  }
+  
+  .ghost {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 0.6rem 1.5rem;
+    color: #fff;
+  }
+  
+  /* SIGN-IN MODE is default, but if the container
+     has .sign-up-mode, we shift everything to reveal sign-up form. */
+  .sign-in-mode .sign-up-container {
+    transform: translateX(100%);
+  }
+  
+  .sign-in-mode .sign-in-container {
+    transform: translateX(0%);
+  }
+  
+  /* Overlay position for sign-in mode */
+  .sign-in-mode .overlay-container {
+    transform: translateX(0%);
+  }
+  
+  .sign-in-mode .overlay {
+    transform: translateX(0%);
+  }
+  
+  /* SIGN-UP MODE overrides: show sign-up in the front */
+  .sign-up-mode .sign-in-container {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .sign-up-mode .sign-up-container {
+    transform: translateX(0%);
+    opacity: 1;
+    z-index: 5;
+  }
+  
+  /* Overlay position for sign-up mode */
+  .sign-up-mode .overlay-container {
+    transform: translateX(-100%);
+  }
+  
+  .sign-up-mode .overlay {
+    transform: translateX(50%);
+  }
+  
+  /* RESPONSIVE: For narrower screens, you might just stack these or do a simpler approach. */
+  @media (max-width: 768px) {
+    .auth-container {
+      width: 90vw;
+      height: 90vh;
+      border-radius: 0;
+    }
+    .form-container {
+      width: 100%;
+      left: 0;
+    }
+    .overlay-container {
+      display: none; /* or refactor for a vertical layout if you prefer */
+    }
+  }
+  

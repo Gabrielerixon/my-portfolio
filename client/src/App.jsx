@@ -6,8 +6,10 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import './styles/layout.css'; // We'll create layout-specific CSS
+import './styles/layout.css';
 import AboutMe from './pages/AboutMe';
+import Blog from './pages/Blog';
+import AuthPage from './pages/AuthPage';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutMe />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/auth" element={<AuthPage />} />
         </Routes>
 
         <Footer />
