@@ -31,13 +31,13 @@ const Navbar = () => {
 
       {/* Desktop Socials */}
       <div className="navbar-socials">
-        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/gabriel-eriksson-7b3a9a1b0/" target="_blank" rel="noreferrer">
           <FaLinkedin size={24} />
         </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+        <a href="https://www.instagram.com/gabrielerixon/" target="_blank" rel="noreferrer">
           <FaInstagram size={24} />
         </a>
-        <a href="https://www.fiverr.com" target="_blank" rel="noreferrer">
+        <a href="http://www.fiverr.com/s/XL3Qbr2" target="_blank" rel="noreferrer">
           <SiFiverr size={24} />
         </a>
       </div>
@@ -63,13 +63,13 @@ const Navbar = () => {
 
           {/* Larger icons at the bottom */}
           <div className="mobile-menu-socials">
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/gabriel-eriksson-7b3a9a1b0/" target="_blank" rel="noreferrer">
               <FaLinkedin size={32} /> 
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/gabrielerixon/" target="_blank" rel="noreferrer">
               <FaInstagram size={32} />
             </a>
-            <a href="https://www.fiverr.com" target="_blank" rel="noreferrer">
+            <a href="http://www.fiverr.com/s/XL3Qbr2" target="_blank" rel="noreferrer">
               <SiFiverr size={32} />
             </a>
           </div>
