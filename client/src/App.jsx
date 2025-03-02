@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 import './styles/layout.css';
 import AboutMe from './pages/AboutMe';
 import Blog from './pages/Blog';
-import AuthPage from './pages/AuthPage';
+import ResponsiveAuth from './pages/ResponsiveAuth';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/auth" element={<ResponsiveAuth />} />
         </Routes>
 
         <Footer />

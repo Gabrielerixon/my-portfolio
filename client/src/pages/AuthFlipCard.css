@@ -1,0 +1,209 @@
+/* AuthFlipCard.css */
+
+/* The outer container for the flipping card */
+.flip-container {
+    position: relative;
+    width: 95%; /* Increased from 90% to 95% */
+    max-width: 600px; /* Increased from 400px */
+    height: 80vh; /* Use 80% of viewport height */
+    margin: 4rem auto;
+    perspective: 1000px; /* enables 3D effects */
+  }
+    
+  /* The inner wrapper that flips */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  
+  /* If flipped, rotate 180 deg around Y axis */
+  .flipped {
+    transform: rotateY(180deg);
+  }
+  
+  /* FRONT & BACK sides */
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem; /* Modified: increased top/bottom, decreased left/right */
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+  
+  .flip-card-front h1,
+  .flip-card-back h1 {
+    margin-bottom: 1.5rem;
+    color: #8D7705;
+    font-size: 2.4rem; /* Increased from 1.8rem (about 30% bigger) */
+    font-weight: bold;
+  }
+  
+  .flip-card-front {
+    z-index: 2;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+  
+  /* Input container to limit width */
+  .input-container {
+    width: 100%;
+    max-width: 320px; /* Increased from 280px */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Social icons with circle styling like desktop */
+  .social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem; /* Increased spacing */
+  }
+  
+  .icon-circle {
+    width: 45px; /* Slightly larger */
+    height: 45px; /* Slightly larger */
+    border-radius: 50%;
+    border: 1px solid #D3D3D3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8D7705; /* Match the Sign In/Up text color */
+    font-size: 1.3rem; /* Slightly larger */
+    transition: all 0.3s ease;
+  }
+  
+  .icon-circle:hover {
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  
+  span {
+    font-size: 1rem; /* Slightly larger */
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  input {
+    width: 100%;
+    margin: 0.7rem 0; /* More space between inputs */
+    padding: 1rem 1.2rem; /* Larger inputs */
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    background-color: #F8F8F8;
+    font-size: 1rem; /* Slightly larger */
+  }
+  
+  .forgot-password {
+    align-self: flex-end;
+    font-size: 0.9rem; /* Slightly larger */
+    color: #666;
+    text-decoration: none;
+    margin: 0.7rem 0 1.5rem; /* More space */
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+    color: #A8474D;
+  }
+  
+  .action-btn {
+    border: none;
+    border-radius: 25px;
+    padding: 0.9rem 2rem; /* Larger buttons */
+    font-size: 1.1rem; /* Slightly larger */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 1.5rem; /* More space */
+    width: 240px; /* Wider buttons */
+  }
+  
+  .action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  /* Main (solid) button */
+  .main-btn {
+    background-color: #A8474D;
+    color: #fff;
+    margin-bottom: 1rem; /* More space */
+  }
+  
+  /* Inverted button */
+  .inverted-btn {
+    background-color: #fff;
+    color: #A8474D;
+    border: 1px solid #A8474D;
+  }
+  
+  @media (min-width: 768px) {
+    .flip-container {
+      max-width: 700px; /* Increased from 500px */
+      min-height: 750px; /* Set minimum height for larger screens */
+    }
+    
+    .flip-card-front,
+    .flip-card-back {
+      padding: 3rem 1rem; /* Modified: even more top/bottom padding on larger screens */
+    }
+    
+    .action-btn {
+      width: 280px; /* Even wider on desktop */
+    }
+    
+    .input-container {
+      max-width: 350px; /* Larger on desktop */
+    }
+    
+    .flip-card-front h1,
+    .flip-card-back h1 {
+      font-size: 2.6rem; /* Even larger on desktop */
+    }
+  }
+  
+  /* For very small screens */
+  @media (max-height: 600px) {
+    .flip-container {
+      height: 90vh; /* Take up more height on small screens */
+      margin: 1rem auto; /* Less margin */
+    }
+    
+    .flip-card-front,
+    .flip-card-back {
+      padding: 2rem 0.75rem; /* Modified: adjusted padding for small screens */
+    }
+    
+    .flip-card-front h1,
+    .flip-card-back h1 {
+      margin-bottom: 1rem; /* Less bottom margin on small screens */
+    }
+    
+    .social-icons {
+      margin: 1rem 0 1.5rem; /* Less margin on small screens */
+    }
+    
+    input {
+      margin: 0.5rem 0; /* Less margin on small screens */
+      padding: 0.8rem 1rem; /* Smaller input fields */
+    }
+  }

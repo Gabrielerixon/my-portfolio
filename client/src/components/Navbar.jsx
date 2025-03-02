@@ -1,12 +1,9 @@
 // src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  FaInstagram,
-  FaLinkedin
-} from 'react-icons/fa'; // from react-icons
-import './Navbar.css';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { SiFiverr } from 'react-icons/si';
+import './Navbar.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,36 +13,52 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      {/* This brand text is always rendered. We’ll add a conditional style if menu is open. */}
-      <div className={`navbar-logo ${isMobileMenuOpen ? 'menu-open-logo' : ''}`}>
-        MyPortfolio
+      {/* Left Section: Brand */}
+      <div className="navbar-left">
+        <div className="navbar-logo">Gabriel&apos;s Portfolio</div>
       </div>
 
-      {/* Desktop Nav Links */}
-      <ul className="navbar-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/auth">Login</Link></li>
-      </ul>
-
-      {/* Desktop Socials */}
-      <div className="navbar-socials">
-        <a href="https://www.linkedin.com/in/gabriel-eriksson-7b3a9a1b0/" target="_blank" rel="noreferrer">
-          <FaLinkedin size={24} />
-        </a>
-        <a href="https://www.instagram.com/gabrielerixon/" target="_blank" rel="noreferrer">
-          <FaInstagram size={24} />
-        </a>
-        <a href="http://www.fiverr.com/s/XL3Qbr2" target="_blank" rel="noreferrer">
-          <SiFiverr size={24} />
-        </a>
+      {/* Center Section: Nav Links (desktop) */}
+      <div className="navbar-center">
+        <ul className="navbar-links">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/projects">Projects</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/auth">Login</Link></li>
+        </ul>
       </div>
 
-      {/* Hamburger Icon for Mobile */}
-      <button className="hamburger" onClick={openMenu}>
-        &#9776;
-      </button>
+      {/* Right Section: Social Icons + Hamburger */}
+      <div className="navbar-right">
+        <div className="navbar-socials">
+          <a 
+            href="https://www.linkedin.com/in/gabriel-eriksson-7b3a9a1b0/" 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            <FaLinkedin size={24} />
+          </a>
+          <a 
+            href="https://www.instagram.com/gabrielerixon/" 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            <FaInstagram size={24} />
+          </a>
+          <a 
+            href="http://www.fiverr.com/s/XL3Qbr2" 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            <SiFiverr size={24} />
+          </a>
+        </div>
+
+        {/* Hamburger Icon for Mobile */}
+        <button className="hamburger" onClick={openMenu}>
+          &#9776; {/* “trigram for menu” character */}
+        </button>
+      </div>
 
       {/* Full-Screen Mobile Menu Overlay */}
       {isMobileMenuOpen && (
@@ -63,13 +76,25 @@ const Navbar = () => {
 
           {/* Larger icons at the bottom */}
           <div className="mobile-menu-socials">
-            <a href="https://www.linkedin.com/in/gabriel-eriksson-7b3a9a1b0/" target="_blank" rel="noreferrer">
+            <a 
+              href="https://www.linkedin.com/in/gabriel-eriksson-7b3a9a1b0/" 
+              target="_blank" 
+              rel="noreferrer"
+            >
               <FaLinkedin size={32} /> 
             </a>
-            <a href="https://www.instagram.com/gabrielerixon/" target="_blank" rel="noreferrer">
+            <a 
+              href="https://www.instagram.com/gabrielerixon/" 
+              target="_blank" 
+              rel="noreferrer"
+            >
               <FaInstagram size={32} />
             </a>
-            <a href="http://www.fiverr.com/s/XL3Qbr2" target="_blank" rel="noreferrer">
+            <a 
+              href="http://www.fiverr.com/s/XL3Qbr2" 
+              target="_blank" 
+              rel="noreferrer"
+            >
               <SiFiverr size={32} />
             </a>
           </div>

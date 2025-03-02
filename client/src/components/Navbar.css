@@ -1,30 +1,42 @@
 /* src/components/Navbar.css */
 
-/* Base navbar styling (desktop) */
+/* Overall navbar container */
 .navbar {
   background-color: #A8474D;
   color: #DAD2BC;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
   position: relative;
+  height: 80px; /* or whatever height you prefer */
 }
 
-/* Brand/Logo */
+/* 3-Column Layout (desktop) */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  flex: 1; 
+  display: flex;
+  align-items: center;
+}
+
+/* Left: Brand/Logo */
 .navbar-logo {
   font-family: 'MANGRO', serif;
   font-size: 2rem;
   font-weight: normal;
   letter-spacing: 1px;
-  margin: 1rem 0rem 1rem 0rem ;
 }
 
-/* Desktop Nav Links */
+/* Center: Nav Links (desktop) */
+.navbar-center {
+  justify-content: center; /* Center the links horizontally */
+}
+
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
@@ -41,48 +53,21 @@
   opacity: 0.8;
 }
 
-/* Social icons (desktop) */
-.navbar-socials {
-  display: flex;
+/* Right: Social Icons + Hamburger (desktop) */
+.navbar-right {
+  justify-content: flex-end;
   gap: 1rem;
 }
 
-.menu-open-logo {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 1.8rem;
-}
-
-/* Mobile-menu-socials: make them bigger and spaced out at the bottom */
-.mobile-menu-socials {
+.navbar-socials {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  color: #DAD2BC; /* or whichever text color you like for the icons */
+  gap: 1rem;
+  margin-right: 1rem; /* some spacing before the hamburger */
 }
 
-.mobile-menu-socials a {
-  /* remove default link underline, etc. */
+.navbar-socials a {
   text-decoration: none;
-  color: inherit;
-}
-
-.social-icon {
-  display: inline-block;
-  background-color: #DAD2BC; 
-  color: #A8474D;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  border-radius: 50%;
-  font-weight: bold;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-.social-icon:hover {
-  opacity: 0.8;
+  color: #DAD2BC;
 }
 
 /* Hamburger icon (hidden on desktop, shown on mobile) */
@@ -95,7 +80,7 @@
   cursor: pointer;
 }
 
-/* Mobile menu overlay */
+/* ========== Mobile Menu Overlay ========== */
 .mobile-menu {
   position: fixed;
   top: 0; left: 0;
@@ -120,13 +105,12 @@
   cursor: pointer;
 }
 
-/* Mobile nav links - single column, centered */
 .mobile-nav-links {
   list-style: none;
   text-align: center;
   padding: 0;
-  margin-bottom: auto; /* push socials to bottom */
-  margin-top: 4rem;
+  margin-top: 4rem; 
+  margin-bottom: auto; /* push socials to bottom if you like */
 }
 
 .mobile-nav-links li {
@@ -136,6 +120,7 @@
 .mobile-nav-links li a {
   font-size: 2rem;
   color: #DAD2BC;
+  text-decoration: none;
 }
 
 /* Social icons at bottom of the mobile menu */
@@ -143,22 +128,28 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  color: #DAD2BC;
+}
+
+.mobile-menu-socials a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ========== Media Queries ========== */
-/* Hide desktop nav + show hamburger on smaller screens */
+/* On smaller screens, hide the nav & socials, show the hamburger */
 @media (max-width: 768px) {
-  .navbar-links,
+  .navbar-center,
   .navbar-socials {
-    display: none; /* Hide them in favor of hamburger + mobile menu */
+    display: none; /* hide the center links + socials on mobile */
   }
 
   .hamburger {
-    display: block;
+    display: block; /* show hamburger on mobile */
   }
 }
 
-/* Hide hamburger + show desktop nav on larger screens */
+/* On wider screens, hide the mobile menu overlay */
 @media (min-width: 769px) {
   .mobile-menu {
     display: none;
