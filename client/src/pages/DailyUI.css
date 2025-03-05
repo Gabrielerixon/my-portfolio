@@ -1,0 +1,47 @@
+/* src/pages/Projects.css or DailyUI.css */
+
+.projects-container {
+  /* White background covering the entire main area */
+  background-color: #fff;
+  min-height: 100vh; /* so it extends at least the full screen height */
+  padding: 2rem 0;
+  text-align: center; /* center text in this container */
+}
+
+.projects-container h1 {
+  /* Dark navy for headings */
+  color: #243447; /* or pick your favorite dark blue, e.g. #1E2A38 */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+/* If you have a paragraph or subtext: */
+.projects-container p {
+  color: #4A5C6B; /* a slightly lighter navy or grey */
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+/* 2 columns at 600px, 3 columns at 1024px, etc. */
+@media (min-width: 600px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -15,8 +15,8 @@ const Home = () => {
 
       <section className="bento-grid">
         {/* PROJECTS LINK */}
-        <Link to="/projects" className="grid-item link-card">
-          <h2>Project Placeholder</h2>
+        <Link to="/DailyUI" className="grid-item link-card">
+          <h2>Daily UI Challenge</h2>
           <p>See what I have created!</p>
           <img 
             src="https://picsum.photos/seed/project1/200/200" 

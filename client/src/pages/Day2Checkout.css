@@ -1,0 +1,157 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4 !important;
+    background-image: none !important;
+}
+
+.day2-checkout-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5rem;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+.day2-checkout-container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    gap: 1rem;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.checkout-form-section {
+    flex: 1;
+    background-color: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.checkout-product-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: fit-content;
+    align-self: flex-start;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.checkout-form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.checkout-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.checkout-form input:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 2px rgba(0,122,255,0.2);
+}
+
+.split-fields {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+}
+
+.split-fields .form-group {
+    flex: 1;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #333333;
+}
+
+.checkout-product-image {
+    max-width: 200px;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.checkout-product-details {
+    text-align: center;
+}
+
+.checkout-product-details h2 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.checkout-product-details p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+/* Back button styling */
+.back-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+}

@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="navbar-center">
         <ul className="navbar-links">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
+          <li><Link to="/DailyUI">Projects</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/auth">Login</Link></li>
         </ul>
@@ -69,7 +69,7 @@ const Navbar = () => {
 
           <ul className="mobile-nav-links">
             <li onClick={closeMenu}><Link to="/">Home</Link></li>
-            <li onClick={closeMenu}><Link to="/projects">Projects</Link></li>
+            <li onClick={closeMenu}><Link to="/DailyUI">Projects</Link></li>
             <li onClick={closeMenu}><Link to="/contact">Contact</Link></li>
             <li onClick={closeMenu}><Link to="/auth">Login</Link></li>
           </ul>
