@@ -8,7 +8,7 @@ const DailyUIs = () => {
   const challenges = [
     { title: 'Day 1: Sign In', description: 'A user-friendly sign in page with a fun animation! P.S It has a Mobile Version!', link: '/auth' },
     { title: 'Day 2: Checkout', description: 'Sleek Apple inspired checkout page!', link: '/dailyui/day2' },
-    { title: 'Day 3: Pricing Table', description: 'Placeholder for day 3', link: '/dailyui/day3' },
+    { title: 'Day 3: Landing Page', description: 'Landing page for a tourist firm specializing in mountain trips to the Tatra mountains!', link: '/dailyui/day3' },
     // ... up to day 100 eventually
   ];
 
