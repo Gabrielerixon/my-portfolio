@@ -1,10 +1,3 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4 !important;
-    background-image: none !important;
-}
-
 .day2-checkout-wrapper {
     width: 100%;
     min-height: 100vh;
@@ -13,10 +6,12 @@ html, body {
     align-items: flex-start;
     padding-top: 5rem;
     box-sizing: border-box;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4 !important;
+    background-image: none !important;
     position: relative;
 }
 
+/* Rest of your CSS remains the same */
 .day2-checkout-container {
     display: flex;
     width: 100%;
