@@ -12,13 +12,14 @@ import ResponsiveAuth from './pages/ResponsiveAuth';
 import Day2Checkout from './pages/Day2Checkout';
 import MountainAgencyLanding from './pages/MountainAgencyLanding';
 import Calculator from './pages/Calculator';
+import Day5UserProfile from './pages/Day5UserProfile';
 
 // Wrapper component to conditionally render Navbar and Footer
 function AppLayout() {
   const location = useLocation();
 
   // List of routes where Navbar and Footer should not be displayed
-  const noNavFooterRoutes = ['/dailyui/day2', '/dailyui/day3', '/dailyui/day4'];
+  const noNavFooterRoutes = ['/dailyui/day2', '/dailyui/day3', '/dailyui/day4', '/dailyui/day5'];
 
   const showNavAndFooter = !noNavFooterRoutes.includes(location.pathname);
 
@@ -36,7 +37,7 @@ function AppLayout() {
         <Route path="/dailyui/day2" element={<Day2Checkout />} />
         <Route path="/dailyui/day3" element={<MountainAgencyLanding />} />
         <Route path="/dailyui/day4" element={<Calculator />} />
-
+        <Route path="/dailyui/day5" element={<Day5UserProfile />} />
       </Routes>
       
       {showNavAndFooter && <Footer />}
