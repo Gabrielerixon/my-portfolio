@@ -11,6 +11,7 @@ const DailyUIs = () => {
     { title: 'Day 3: Landing Page', description: 'Landing page for a tourist firm specializing in mountain trips to the Tatra mountains!', link: '/dailyui/day3' },
     { title: 'Day 4: Calculator', description: 'A Cute Calculator with a nice gradient!', link: '/dailyui/day4'},
     { title: 'Day 5: User Profile', description: 'A Fun gaming user profile', link: '/dailyui/day5' },
+    { title: 'Day 6: Settings', description: 'A minimalist settings page, focusing on accessability settings!', link: '/dailyui/day6' },
     // ... up to day 100 eventually
   ];
 
