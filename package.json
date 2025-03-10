@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "three": "^0.174.0"
   },
   "scripts": {
     "start:client": "cd client && npm start",

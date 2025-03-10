@@ -14,13 +14,14 @@ import MountainAgencyLanding from './pages/MountainAgencyLanding';
 import Calculator from './pages/Calculator';
 import Day5UserProfile from './pages/Day5UserProfile';
 import Day6Settings from './pages/Day6Settings';
+import Day7Error from './pages/Day7Error';
 
 // Wrapper component to conditionally render Navbar and Footer
 function AppLayout() {
   const location = useLocation();
 
   // List of routes where Navbar and Footer should not be displayed
-  const noNavFooterRoutes = ['/dailyui/day2', '/dailyui/day3', '/dailyui/day4', '/dailyui/day5', '/dailyui/day6'];
+  const noNavFooterRoutes = ['/dailyui/day2', '/dailyui/day3', '/dailyui/day4', '/dailyui/day5', '/dailyui/day6', '/dailyui/day7'];
 
   const showNavAndFooter = !noNavFooterRoutes.includes(location.pathname);
 
@@ -40,6 +41,7 @@ function AppLayout() {
         <Route path="/dailyui/day4" element={<Calculator />} />
         <Route path="/dailyui/day5" element={<Day5UserProfile />} />
         <Route path="/dailyui/day6" element={<Day6Settings />} />
+        <Route path="/dailyui/day7" element={<Day7Error />} />
       </Routes>
       
       {showNavAndFooter && <Footer />}

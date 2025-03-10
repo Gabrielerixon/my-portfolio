@@ -12,6 +12,7 @@ const DailyUIs = () => {
     { title: 'Day 4: Calculator', description: 'A Cute Calculator with a nice gradient!', link: '/dailyui/day4'},
     { title: 'Day 5: User Profile', description: 'A Fun gaming user profile', link: '/dailyui/day5' },
     { title: 'Day 6: Settings', description: 'A minimalist settings page, focusing on accessability settings!', link: '/dailyui/day6' },
+    { title: 'Day 7: 404 Error page', description: 'A fun 404 error page', link: '/dailyui/day7' },
     // ... up to day 100 eventually
   ];
 
