@@ -15,12 +15,14 @@
   color: var(--footer-text);
   padding: 5rem 0 2rem;
   position: relative;
+  
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
+  padding-bottom: 0;
 }
 
 .footer-grid {

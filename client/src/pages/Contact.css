@@ -1,9 +1,12 @@
 /* src/pages/Contact.css */
 
 .contact-container {
-  padding: 120px 5% 5rem; /* Increased top padding to accommodate navbar */
+  /* Increase top padding to better clear the navbar */
+  padding: 150px 5% 3rem; /* Increase from 120px to 150px */
   background-color: #f8fafc;
   min-height: 100vh;
+  position: relative; /* Add position relative */
+  z-index: 1; /* Make sure it's below navbar z-index */
 }
 
 /* Animation classes */
@@ -34,6 +37,7 @@
   flex: 1;
 }
 
+/* Add this to ensure the gradient text renders properly */
 .contact-info h1 {
   font-size: 3rem;
   font-weight: 800;
@@ -42,6 +46,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  /* Add these properties to fix the rendering */
+  position: relative;
+  z-index: 2;
 }
 
 .contact-info p {
