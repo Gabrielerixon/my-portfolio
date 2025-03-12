@@ -1,16 +1,16 @@
 // src/components/ProjectCard.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectCard.css';
-// If you’re using random gradient:
 import { getRandomGradient } from '../utils/gradientUtils';
 
 const ProjectCard = ({ project }) => {
   const { title, description, link } = project;
+  const [isHovered, setIsHovered] = useState(false);
   const [gradient, setGradient] = useState('');
 
   useEffect(() => {
-    // If you want a random gradient only once on mount
+    // Get a random gradient for each card
     const bg = getRandomGradient();
     setGradient(bg);
   }, []);
@@ -18,16 +18,30 @@ const ProjectCard = ({ project }) => {
   return (
     <div 
       className="project-card"
-      style={{ background: gradient }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="card-top">
+      <div className="project-card-bg" style={{ background: gradient }}></div>
+      <div className="project-card-content">
         <h3>{title}</h3>
         <p>{description}</p>
-      </div>
-      <div className="card-bottom">
-      <Link to={link} className="view-link">
-        View Challenge
-      </Link>
+        <Link to={link} className="project-card-link">
+          <span>View Challenge</span>
+          <svg 
+            className={`arrow-icon ${isHovered ? 'active' : ''}`} 
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            stroke="currentColor" 
+            strokeWidth="2" 
+            fill="none" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </Link>
       </div>
     </div>
   );

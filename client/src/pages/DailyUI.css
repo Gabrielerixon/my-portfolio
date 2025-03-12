@@ -1,47 +1,186 @@
-/* src/pages/Projects.css or DailyUI.css */
+/* src/pages/DailyUI.css */
 
-.projects-container {
-  /* White background covering the entire main area */
-  background-color: #fff;
-  min-height: 100vh; /* so it extends at least the full screen height */
-  padding: 2rem 0;
-  text-align: center; /* center text in this container */
+.dailyui-container {
+  padding: 120px 5% 5rem; /* Increased top padding to accommodate navbar */
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+body {
+  padding-top: 80px; /* Adjust this value based on your navbar height */
+}
+/* Animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.projects-container h1 {
-  /* Dark navy for headings */
-  color: #243447; /* or pick your favorite dark blue, e.g. #1E2A38 */
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+.animate-in {
+  animation: fadeInUp 0.8s ease-out both;
 }
 
-/* If you have a paragraph or subtext: */
-.projects-container p {
-  color: #4A5C6B; /* a slightly lighter navy or grey */
-  margin-bottom: 2rem;
+/* Hero section */
+.dailyui-hero {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem;
+  background: linear-gradient(135deg, #4f46e5, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+/* Progress bar */
+.progress-container {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e2e8f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #4f46e5, #ec4899);
+  border-radius: 5px;
+  transition: width 1s ease-out;
+}
+
+/* Projects grid */
+.dailyui-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card-wrapper {
+  opacity: 0;
+}
+
+.project-card-wrapper.animate-in {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Coming soon section */
+.coming-soon {
+  text-align: center;
+  margin-top: 5rem;
+  padding: 3rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.projects-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 1rem;
+.coming-soon h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #4f46e5, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* 2 columns at 600px, 3 columns at 1024px, etc. */
-@media (min-width: 600px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+.coming-soon p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .dailyui-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
   }
 }
-@media (min-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
+
+@media (max-width: 768px) {
+  .dailyui-container {
+    padding: 100px 1rem 3rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .dailyui-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .coming-soon {
+    padding: 2rem 1rem;
+  }
+  
+  .coming-soon h2 {
+    font-size: 1.8rem;
   }
 }
