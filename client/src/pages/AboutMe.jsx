@@ -91,7 +91,7 @@ const AboutMe = () => {
                         </div>
                       </div>
                       <div className="skill-item">
-                        <span className="skill-name">SCSS/SASS</span>
+                        <span className="skill-name">Libraries</span>
                         <div className="skill-level-container">
                           <div className="skill-level" style={{ width: '80%' }}></div>
                         </div>
@@ -133,7 +133,7 @@ const AboutMe = () => {
                     <h3>UI/UX & Tools</h3>
                     <div className="skills-list">
                       <div className="skill-item">
-                        <span className="skill-name">Figma</span>
+                        <span className="skill-name">Color Theory</span>
                         <div className="skill-level-container">
                           <div className="skill-level" style={{ width: '80%' }}></div>
                         </div>
