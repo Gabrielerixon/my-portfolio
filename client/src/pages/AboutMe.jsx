@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './AboutMe.css';
+import profilePic from '../assets/profile-pic.jpg';
 
 const AboutMe = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -19,7 +20,7 @@ const AboutMe = () => {
             <div className="image-blob"></div>
             <div className="image-frame">
               <img 
-                src="https://picsum.photos/400/400" 
+                src={profilePic}
                 alt="Gabriel Eriksson" 
                 className="profile-image"
               />
@@ -31,7 +32,7 @@ const AboutMe = () => {
           <h1>I'm Gabriel Eriksson</h1>
           <h2>Full Stack Developer</h2>
           <p>
-            I'm a passionate web developer based in Stockholm, Sweden, with a love for creating beautiful, 
+            I'm a passionate web developer based in Jönköping, Sweden, with a love for creating beautiful, 
             functional user interfaces and robust backend solutions. With expertise in React and Node.js, 
             I bring ideas to life through clean code and thoughtful design.
           </p>
@@ -183,7 +184,7 @@ const AboutMe = () => {
                     <div className="timeline-date">2023 - 2023</div>
                     <div className="timeline-content">
                       <h3>Highschool Physics Teacher</h3>
-                      <h4>Sanda Gymnasiet</h4>
+                      <h4>Sandagymnasiet</h4>
                       <p>
                         Lectured in Physics 1 for 1st and 2nd year students on the Science program. 
                         Helped Students understand the material, Planned and held lectures, Planned and Held Labs.
@@ -212,39 +213,39 @@ const AboutMe = () => {
                 <div className="timeline">
                   <div className="timeline-item">
                     <div className="timeline-dot"></div>
-                    <div className="timeline-date">2015 - 2018</div>
+                    <div className="timeline-date">2019 - 2022</div>
                     <div className="timeline-content">
-                      <h3>Bachelor's in Computer Science</h3>
-                      <h4>Stockholm University</h4>
+                      <h3>Highschool Diploma</h3>
+                      <h4>Sandagymnasiet</h4>
                       <p>
-                        Focused on software development, algorithms, and web technologies.
-                        Graduated with honors and completed several practical projects.
+                        Graduated the Natural Science program with highest honors. Was part of the NIU
+                        swim team and swam multiple national championships.
                       </p>
                     </div>
                   </div>
                   
                   <div className="timeline-item">
                     <div className="timeline-dot"></div>
-                    <div className="timeline-date">2020</div>
+                    <div className="timeline-date">2023-present</div>
                     <div className="timeline-content">
-                      <h3>Advanced React Certification</h3>
-                      <h4>Online Learning Platform</h4>
+                      <h3>Self Thaught Programmer</h3>
+                      <h4>Multiple Sources</h4>
                       <p>
-                        In-depth study of React, Redux, and modern frontend architecture.
-                        Built several projects showcasing advanced concepts and best practices.
+                        During my year of study abroad in the USA, I found a passion for programming with a course 
+                        in C#. After that I started taking courses online, as well as in swedish universities, to broaden my knowledge. 
                       </p>
                     </div>
                   </div>
                   
                   <div className="timeline-item">
                     <div className="timeline-dot"></div>
-                    <div className="timeline-date">2021</div>
+                    <div className="timeline-date">2024-2025</div>
                     <div className="timeline-content">
-                      <h3>Full Stack Development</h3>
-                      <h4>Tech Bootcamp</h4>
+                      <h3>Full Stack Development Bootcamp</h3>
+                      <h4>The Appbrewery</h4>
                       <p>
                         Intensive program covering both frontend and backend technologies.
-                        Created full-stack applications using the MERN stack.
+                        Created full-stack applications using React, NodeJS and more.
                       </p>
                     </div>
                   </div>
@@ -267,7 +268,7 @@ const AboutMe = () => {
           <div className="interest-card">
             <div className="interest-icon">📚</div>
             <h3>Reading</h3>
-            <p>Avid reader of science fiction and technical books.</p>
+            <p>Avid reader of science fiction and manga/manhwa.</p>
           </div>
           
           <div className="interest-card">

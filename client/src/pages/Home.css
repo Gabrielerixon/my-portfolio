@@ -318,8 +318,38 @@
 }
 
 .skill-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  height: 70px; /* Fixed height for consistent spacing */
+}
+
+.skill-icon svg {
+  max-width: 60px;
+  max-height: 60px;
+  transition: transform 0.3s ease;
+}
+
+/* Add hover effect to make logos more interactive */
+.skill-card:hover .skill-icon svg {
+  transform: scale(1.1);
+}
+
+/* Style adjustments for specific logos if needed */
+.skill-card:nth-child(1) .skill-icon svg {
+  /* React logo animation */
+  animation: react-spin 10s linear infinite;
+}
+
+@keyframes react-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .skill-card h3 {
@@ -364,11 +394,15 @@
 }
 
 .project-preview-card {
+  position: relative;
   background-color: white;
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-preview-card:hover {
@@ -381,6 +415,7 @@
   background-color: #e2e8f0;
   position: relative;
   overflow: hidden;
+  transition: transform 0.5s ease;
 }
 
 .project-image::before {
@@ -390,50 +425,62 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(79, 70, 229, 0.8), rgba(236, 72, 153, 0.8));
-  opacity: 0.7;
+  background: linear-gradient(45deg, rgba(79, 70, 229, 0.3), rgba(236, 72, 153, 0.3));
+  opacity: 0.5; /* Reduced from 0.7 */
   transition: opacity 0.3s ease;
 }
 
-.project-image.ui-preview::after {
-  content: "UI";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
-  font-weight: 900;
-  color: white;
-}
-
-.project-image.calculator-preview::after {
-  content: "CALC";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: white;
-}
-
-.project-image.profile-preview::after {
-  content: "PROFILE";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: white;
+.project-preview-card:hover .project-image {
+  transform: scale(1.05);
 }
 
 .project-preview-card:hover .project-image::before {
-  opacity: 0.9;
+  opacity: 0.3; /* Reduced from 0.9 */
+}
+
+/* Project preview images */
+.project-image.mountain-landing-preview {
+  background-image: url('../assets/project-previews/mountain-landing.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.project-image.error-page-preview {
+  background-image: url('../assets/project-previews/error-page.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.project-image.profile-dashboard-preview {
+  background-image: url('../assets/project-previews/profile-dashboard.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Add overlay on hover for better text readability */
+.project-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.project-preview-card:hover .project-image::after {
+  opacity: 1;
 }
 
 .project-info {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  padding-bottom: 5rem; /* Make room for the button */
 }
 
 .project-info h3 {
@@ -444,8 +491,18 @@
 
 .project-info p {
   color: var(--text-light);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.6;
+}
+
+.project-info .view-project-btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
 }
 
 .view-all-container {
