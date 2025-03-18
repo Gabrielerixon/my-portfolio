@@ -1,34 +1,4 @@
-@media (max-width: 480px) {
-  .about-cta {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .contact-btn, .resume-btn {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .interests-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .tabs-header {
-    flex-direction: column;
-  }
-  
-  .tab-btn {
-    text-align: left;
-    padding: 12px 16px;
-  }
-  
-  .tab-btn.active::after {
-    width: 5px;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
-}/* src/pages/AboutMe.css */
+/* src/pages/AboutMe.css */
 
 .about-container {
   padding: 120px 5% 5rem;
@@ -532,5 +502,82 @@
   
   .interests-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  
+  /* Improved tab button display on mobile */
+  .tabs-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tab-btn {
+    flex: 1 0 calc(50% - 0.5rem); /* Two per row */
+    min-width: 120px;
+    border-radius: 8px;
+    margin: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-btn, .resume-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Improved tab display for very small screens */
+  .tabs-header {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  
+  .tab-btn {
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 0.25rem 0;
+    width: 100%;
+    flex: 1 0 100%;
+  }
+  
+  .tab-btn.active {
+    background-color: rgba(79, 70, 229, 0.1);
+  }
+  
+  .tab-btn.active::after {
+    width: 5px;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  
+  /* Improve timeline on small screens */
+  .timeline {
+    padding-left: 2rem;
+  }
+  
+  .timeline-dot {
+    left: -1.5rem;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+  .tabs-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .skills-categories {
+    grid-template-columns: 1fr;
   }
 }
