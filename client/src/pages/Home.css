@@ -153,6 +153,7 @@
   flex: 1;
   max-width: 600px;
   z-index: 2;
+  margin-top: 3rem;
 }
 
 .hero-title {
