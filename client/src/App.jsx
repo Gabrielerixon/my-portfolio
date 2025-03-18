@@ -15,6 +15,7 @@ import Calculator from './pages/Calculator';
 import Day5UserProfile from './pages/Day5UserProfile';
 import Day6Settings from './pages/Day6Settings';
 import Day7Error from './pages/Day7Error';
+import PageTitle from './components/PageTitle';
 
 // Wrapper component to conditionally render Navbar and Footer
 function AppLayout() {
@@ -27,6 +28,7 @@ function AppLayout() {
 
   return (
     <div className="app-container">
+      <PageTitle />
       {showNavAndFooter && <Navbar />}
       
       <Routes>
