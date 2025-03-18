@@ -16,8 +16,8 @@ const Contact = () => {
   // Component style object with aggressive positioning fixes
   const componentStyles = {
     container: {
-      paddingTop: '0px', // Very large top padding to ensure clearance
-      marginTop: '40px',   // Additional margin to push content down
+      paddingTop: '0px', 
+      marginTop: '40px',   
       position: 'relative',
       zIndex: 1
     },
@@ -41,30 +41,33 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    setStatus('Sending...');
+    setStatus('');
 
     try {
-      // Simulating API call with timeout
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Make the API call to our serverless function
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
       
-      // In a real implementation, you'd make an actual API call like this:
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Error sending message');
+      }
       
       setStatus('Your message has been sent! I\'ll get back to you soon.');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setSending(false);
       
       // Clear success message after 5 seconds
       setTimeout(() => {
         setStatus('');
       }, 5000);
     } catch (error) {
-      console.error(error);
-      setStatus('Error sending message. Please try again later.');
+      console.error('Error:', error);
+      setStatus(`Error sending message: ${error.message}. Please try again later.`);
+    } finally {
       setSending(false);
     }
   };

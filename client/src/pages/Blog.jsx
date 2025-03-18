@@ -15,7 +15,7 @@ const Blog = () => {
       id: 1,
       title: "Getting Started with React Hooks",
       excerpt: "A beginner-friendly guide to using React Hooks in your projects. Learn about useState, useEffect, and more.",
-      date: "March 10, 2023",
+      date: "March 10, 2025",
       category: "React",
       image: "react-hooks"
     },
@@ -23,7 +23,7 @@ const Blog = () => {
       id: 2,
       title: "Building Responsive UIs with Tailwind CSS",
       excerpt: "Discover how to create beautiful, responsive user interfaces using the utility-first CSS framework Tailwind.",
-      date: "February 22, 2023",
+      date: "February 22, 2025",
       category: "CSS",
       image: "tailwind-css"
     },
@@ -31,7 +31,7 @@ const Blog = () => {
       id: 3,
       title: "The Power of Node.js for Backend Development",
       excerpt: "Explore why Node.js is a great choice for building scalable, efficient backend services for your web applications.",
-      date: "January 15, 2023",
+      date: "January 15, 2025",
       category: "Backend",
       image: "nodejs"
     },
@@ -39,7 +39,7 @@ const Blog = () => {
       id: 4,
       title: "Optimizing Website Performance: Best Practices",
       excerpt: "Learn essential techniques and tools to improve your website's loading speed and overall performance.",
-      date: "December 5, 2022",
+      date: "December 5, 2024",
       category: "Performance",
       image: "web-performance"
     }
@@ -53,7 +53,7 @@ const Blog = () => {
         </h1>
         
         <p className={`hero-description ${isLoaded ? 'animate-in' : ''}`}>
-          Thoughts, tutorials, and insights about web development, design, and technology.
+          Thoughts, tutorials, and insights about web development, design, and technology. Currently only placeholders. Stay tuned!
         </p>
       </div>
       

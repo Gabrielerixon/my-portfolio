@@ -16,7 +16,8 @@ const DailyUIs = () => {
     },
     heading: {
       position: 'relative',
-      zIndex: 2
+      zIndex: 2,
+      paddingBottom: '1rem'
     }
   };
   
