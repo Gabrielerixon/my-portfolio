@@ -634,7 +634,7 @@
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
-    padding: 4rem 5%;
+    padding: 6rem;
     text-align: center;
   }
   
@@ -649,6 +649,7 @@
   
   .hero-title {
     font-size: 3rem;
+    margin-top: 2rem;
   }
   
   .hero-subtitle {
