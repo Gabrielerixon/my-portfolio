@@ -280,17 +280,36 @@
   }
   
   /* Center the contact form in its container on mobile */
-  .contact-form {
+  .contact-form-container {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center form elements horizontally */
+    justify-content: center;
+    align-items: center;
+    padding: 0;
   }
   
-  .form-group, 
-  .form-header,
+  .contact-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  
+  .form-group label,
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    text-align: left;
+  }
+  
   .submit-btn {
-    width: 100%; /* Full width */
-    max-width: 400px; /* Maximum width */
+    width: 100%;
+    max-width: 100%;
   }
   
   /* Fix the icon alignment */
