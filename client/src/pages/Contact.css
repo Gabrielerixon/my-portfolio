@@ -93,6 +93,8 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: #0f172a;
+  display: block; /* Ensure block-level display */
+  width: 100%; /* Take full width */
 }
 
 .method-details p {
@@ -268,6 +270,31 @@
   }
   
   .contact-method {
-    align-items: center;
+    align-items: flex-start; /* Changed from center to flex-start */
+    text-align: left; /* Left-align text */
+  }
+  
+  /* Improve method details on mobile */
+  .method-details {
+    flex: 1;
+  }
+  
+  /* Center the contact form in its container on mobile */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements horizontally */
+  }
+  
+  .form-group, 
+  .form-header,
+  .submit-btn {
+    width: 100%; /* Full width */
+    max-width: 400px; /* Maximum width */
+  }
+  
+  /* Fix the icon alignment */
+  .method-icon {
+    margin-top: 0.25rem; /* Slight top margin to align with text */
   }
 }
