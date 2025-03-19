@@ -496,8 +496,19 @@
     text-align: center;
   }
   
+  /* Fix for timeline alignment on mobile */
   .timeline {
-    padding-left: 3rem;
+    padding-left: 2.5rem; /* Increased padding to ensure content doesn't overlap with timeline */
+  }
+  
+  .timeline::before {
+    left: 10px; /* Adjusted to match with the timeline dots */
+  }
+  
+  .timeline-dot {
+    left: -2.1rem; /* Adjusted to align properly with the vertical line */
+    width: 16px; /* Slightly smaller dot on mobile */
+    height: 16px;
   }
   
   .interests-grid {
@@ -559,13 +570,17 @@
     top: 0;
   }
   
-  /* Improve timeline on small screens */
+  /* Additional timeline fixes for extra small screens */
   .timeline {
-    padding-left: 2rem;
+    padding-left: 2.2rem; /* Fine-tuned padding */
+  }
+  
+  .timeline::before {
+    left: 8px; /* Adjusted to visually align with dots */
   }
   
   .timeline-dot {
-    left: -1.5rem;
+    left: -1.9rem; /* Adjusted positioning */
     width: 14px;
     height: 14px;
   }
@@ -579,5 +594,18 @@
   
   .skills-categories {
     grid-template-columns: 1fr;
+  }
+  
+  /* Final timeline adjustment for very small screens */
+  .timeline {
+    padding-left: 2rem;
+  }
+  
+  .timeline::before {
+    left: 7px;
+  }
+  
+  .timeline-dot {
+    left: -1.7rem;
   }
 }
