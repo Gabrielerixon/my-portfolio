@@ -232,7 +232,7 @@ const AboutMe = () => {
                       <h4>Multiple Sources</h4>
                       <p>
                         During my year of study abroad in the USA, I found a passion for programming with a course 
-                        in C#. After that I started taking courses online, as well as in swedish universities, to broaden my knowledge. 
+                        in C#. After that I started taking courses online, as well as at swedish universities, to broaden my knowledge. 
                       </p>
                     </div>
                   </div>
