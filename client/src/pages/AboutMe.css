@@ -498,17 +498,17 @@
   
   /* Fix for timeline alignment on mobile */
   .timeline {
-    padding-left: 2.6rem; /* Slightly increased padding */
+    padding-left: 2.68rem; /* Fine-tuned padding - smaller increment */
     position: relative;
   }
   
   .timeline::before {
-    left: 16px; /* Moved slightly more to the right */
+    left: 16.8px; /* Smaller increment to the right */
     position: absolute;
   }
   
   .timeline-dot {
-    left: -2rem; /* Adjusted to align with the vertical line */
+    left: -2.04rem; /* Adjusted to align with the vertical line */
     position: absolute;
     width: 16px; /* Slightly smaller dot on mobile */
     height: 16px;
@@ -575,15 +575,15 @@
   
   /* Additional timeline fixes for extra small screens */
   .timeline {
-    padding-left: 2.6rem; /* Consistent padding */
+    padding-left: 2.68rem; /* Consistent padding */
   }
   
   .timeline::before {
-    left: 16px; /* Keep it consistent */
+    left: 16.8px; /* Keep it consistent */
   }
   
   .timeline-dot {
-    left: -2rem; /* Consistent positioning */
+    left: -2.04rem; /* Consistent positioning */
   }
 }
 
@@ -599,14 +599,14 @@
   
   /* Final timeline adjustment for very small screens - keep consistent */
   .timeline {
-    padding-left: 2.6rem;
+    padding-left: 2.68rem;
   }
   
   .timeline::before {
-    left: 16px;
+    left: 16.8px;
   }
   
   .timeline-dot {
-    left: -2rem;
+    left: -2.04rem;
   }
 }
