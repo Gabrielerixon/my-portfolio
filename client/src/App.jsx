@@ -16,6 +16,7 @@ import Day5UserProfile from './pages/Day5UserProfile';
 import Day6Settings from './pages/Day6Settings';
 import Day7Error from './pages/Day7Error';
 import PageTitle from './components/PageTitle';
+import { Analytics } from "@vercel/analytics/react"
 
 // Wrapper component to conditionally render Navbar and Footer
 function AppLayout() {
@@ -47,6 +48,7 @@ function AppLayout() {
       </Routes>
       
       {showNavAndFooter && <Footer />}
+      <Analytics/>
     </div>
   );
 }
