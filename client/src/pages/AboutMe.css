@@ -572,7 +572,7 @@
   
   /* Additional timeline fixes for extra small screens */
   .timeline {
-    padding-left: 2.2rem; /* Fine-tuned padding */
+    padding-left: 2.6rem; /* Fine-tuned padding */
   }
   
   .timeline::before {
@@ -598,7 +598,7 @@
   
   /* Final timeline adjustment for very small screens */
   .timeline {
-    padding-left: 2rem;
+    padding-left: 2.4rem;
   }
   
   .timeline::before {
