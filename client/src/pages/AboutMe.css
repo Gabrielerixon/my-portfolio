@@ -498,18 +498,20 @@
   
   /* Fix for timeline alignment on mobile */
   .timeline {
-    padding-left: 2.5rem; /* More balanced padding */
+    padding-left: 2.25rem; /* Fine-tuned padding */
     position: relative;
   }
   
   .timeline::before {
-    left: 18px; /* More balanced position */
+    left: 12px; /* Adjusted position */
     position: absolute;
   }
   
   .timeline-dot {
-    left: -2.05rem; /* Adjusted to align with the vertical line */
+    left: -1.8rem; /* Adjusted to align with the vertical line */
     position: absolute;
+    width: 16px; /* Slightly smaller dot on mobile */
+    height: 16px;
   }
   
   .interests-grid {
@@ -573,15 +575,15 @@
   
   /* Additional timeline fixes for extra small screens */
   .timeline {
-    padding-left: 2.5rem; /* Consistent padding */
+    padding-left: 2.25rem; /* Consistent padding */
   }
   
   .timeline::before {
-    left: 18px; /* Keep it consistent */
+    left: 12px; /* Keep it consistent */
   }
   
   .timeline-dot {
-    left: -2.05rem; /* Consistent positioning */
+    left: -1.8rem; /* Consistent positioning */
   }
 }
 
@@ -597,14 +599,14 @@
   
   /* Final timeline adjustment for very small screens - keep consistent */
   .timeline {
-    padding-left: 2.5rem;
+    padding-left: 2.25rem;
   }
   
   .timeline::before {
-    left: 18px;
+    left: 12px;
   }
   
   .timeline-dot {
-    left: -2.05rem;
+    left: -1.8rem;
   }
 }
