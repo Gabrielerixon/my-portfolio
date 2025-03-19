@@ -498,17 +498,18 @@
   
   /* Fix for timeline alignment on mobile */
   .timeline {
-    padding-left: 2.8rem; /* Increased padding to ensure content doesn't overlap with timeline */
+    padding-left: 3.5rem; /* Significantly increased padding */
+    position: relative;
   }
   
   .timeline::before {
-    left: 14px; /* Moved more to the right to match with the timeline dots */
+    left: 25px; /* Moved much more to the right */
+    position: absolute;
   }
   
   .timeline-dot {
-    left: -2.15rem; /* Adjusted to align properly with the vertical line */
-    width: 16px; /* Slightly smaller dot on mobile */
-    height: 16px;
+    left: -3rem; /* Adjusted to align with the vertical line */
+    position: absolute;
   }
   
   .interests-grid {
@@ -572,17 +573,15 @@
   
   /* Additional timeline fixes for extra small screens */
   .timeline {
-    padding-left: 2.5rem; /* Fine-tuned padding */
+    padding-left: 3.5rem; /* Consistent padding */
   }
   
   .timeline::before {
-    left: 12px; /* Moved more to the right to align with dots */
+    left: 25px; /* Keep it consistent */
   }
   
   .timeline-dot {
-    left: -1.95rem; /* Adjusted positioning */
-    width: 14px;
-    height: 14px;
+    left: -3rem; /* Consistent positioning */
   }
 }
 
@@ -596,16 +595,16 @@
     grid-template-columns: 1fr;
   }
   
-  /* Final timeline adjustment for very small screens */
+  /* Final timeline adjustment for very small screens - keep consistent */
   .timeline {
-    padding-left: 2.3rem;
+    padding-left: 3.5rem;
   }
   
   .timeline::before {
-    left: 11px;
+    left: 25px;
   }
   
   .timeline-dot {
-    left: -1.75rem;
+    left: -3rem;
   }
 }
