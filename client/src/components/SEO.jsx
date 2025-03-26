@@ -1,6 +1,6 @@
 // src/components/SEO.jsx
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Helmet from 'react-helmet';
 
 const SEO = ({ 
   title = 'Gabriel Eriksson | Full Stack Developer | Eriksson G AB',

@@ -1,6 +1,6 @@
 // src/components/SchemaOrg.jsx
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Helmet from 'react-helmet';
 
 const SchemaOrg = () => {
   // Basic business information

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+// Remove the HelmetProvider import
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -60,11 +60,10 @@ function AppLayout() {
 
 function App() {
   return (
-    <HelmetProvider>
-      <Router>
-        <AppLayout />
-      </Router>
-    </HelmetProvider>
+    // Remove the HelmetProvider wrapper
+    <Router>
+      <AppLayout />
+    </Router>
   );
 }
 
