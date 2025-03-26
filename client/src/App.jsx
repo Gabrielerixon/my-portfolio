@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -16,8 +17,9 @@ import Day5UserProfile from './pages/Day5UserProfile';
 import Day6Settings from './pages/Day6Settings';
 import Day7Error from './pages/Day7Error';
 import PageTitle from './components/PageTitle';
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import SchemaOrg from './components/SchemaOrg';
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Wrapper component to conditionally render Navbar and Footer
 function AppLayout() {
@@ -31,6 +33,7 @@ function AppLayout() {
   return (
     <div className="app-container">
       <PageTitle />
+      <SchemaOrg /> {/* Added SchemaOrg while keeping PageTitle */}
       {showNavAndFooter && <Navbar />}
       
       <Routes>
@@ -57,9 +60,11 @@ function AppLayout() {
 
 function App() {
   return (
-    <Router>
-      <AppLayout />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <AppLayout />
+      </Router>
+    </HelmetProvider>
   );
 }
 
