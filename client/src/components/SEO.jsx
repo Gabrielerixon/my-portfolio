@@ -3,11 +3,11 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO = ({ 
-  title = 'Gabriel Eriksson | Full Stack Developer | Eriksson G AB',
-  description = 'Professional web development services by Gabriel Eriksson. Eriksson G AB offers full-stack development specializing in React, Node.js, and modern web technologies.',
-  keywords = 'Gabriel Eriksson, Eriksson G AB, web development, full stack developer, React, Node.js, JavaScript, Jönköping, Sweden',
+  title = 'Eriksson G AB | Professionell Webbutveckling i Jönköping | Gabriel Eriksson',
+  description = 'Eriksson G AB erbjuder professionell webbutveckling och webbdesign i Jönköping och Huskvarna. Specialiserad inom React, Node.js och moderna webbteknologier.',
+  keywords = 'Eriksson G AB, webbyrå Jönköping, webbutvecklare Huskvarna, Gabriel Eriksson, webbdesign, webbsida företag, bygga webbsida, köp webbsida, designa webbsida, website builder, website jönköping',
   canonicalUrl,
-  ogImage = '/images/gabriel-eriksson-developer.jpg', // Create a default Open Graph image
+  ogImage = '/images/eriksson-g-ab-webbutveckling.jpg',
   ogType = 'website',
   children 
 }) => {

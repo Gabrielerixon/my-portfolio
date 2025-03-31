@@ -57,7 +57,20 @@ const SchemaOrg = () => {
       "opens": "10:00",
       "closes": "15:00"
     },
-    "areaServed": "Sweden",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Jönköping"
+      },
+      {
+        "@type": "City",
+        "name": "Huskvarna"  
+      },
+      {
+        "@type": "State",
+        "name": "Jönköpings län"
+      }
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Web Development Services",
@@ -66,34 +79,34 @@ const SchemaOrg = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Custom Website Development",
-            "description": "Professional custom website development with modern technologies."
+            "name": "Skräddarsydd Webbutveckling",
+            "description": "Professionell skräddarsydd webbutveckling med moderna teknologier."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "React Application Development",
-            "description": "Creation of interactive web applications using React."
+            "name": "React Applikationsutveckling",
+            "description": "Utveckling av interaktiva webbapplikationer med React."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Full Stack Development",
-            "description": "End-to-end web solution development using modern technologies."
+            "name": "Full Stack Utveckling",
+            "description": "Kompletta webblösningar som använder moderna teknologier."
           }
         },
         {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SEO optimized Website",
-              "description": "Modern Website using Proper SEO tools to make your Webiste trully good."
-            }
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO-optimerade Webbplatser",
+            "description": "Moderna webbplatser med rätt SEO-verktyg för att verkligen synas på nätet."
           }
+        }
       ]
     }
   };

@@ -57,6 +57,9 @@ const Navbar = () => {
             <li className={isActive('/')}>
               <Link to="/" onClick={handleLinkClick}>Home</Link>
             </li>
+            <li className={isActive('/services')}>
+              <Link to="/services" onClick={handleLinkClick}>Services</Link>
+            </li>
             <li className={isActive('/dailyui')}>
               <Link to="/dailyui" onClick={handleLinkClick}>Projects</Link>
             </li>
@@ -108,6 +111,9 @@ const Navbar = () => {
         <ul>
           <li className={isActive('/')}>
             <Link to="/" onClick={handleLinkClick}>Home</Link>
+          </li>
+          <li className={isActive('/services')}>
+            <Link to="/services" onClick={handleLinkClick}>Services</Link>
           </li>
           <li className={isActive('/dailyui')}>
             <Link to="/dailyui" onClick={handleLinkClick}>Projects</Link>

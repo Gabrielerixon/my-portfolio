@@ -16,10 +16,10 @@ const AboutMe = () => {
   return (
     <>
       <SEO 
-        title="About Gabriel Eriksson | Eriksson G AB | Full Stack Web Developer Jönköping"
-        description="Learn about Gabriel Eriksson, founder of Eriksson G AB. Professional web development services in Jönköping, Sweden specializing in React, Node.js, and custom web solutions."
-        keywords="Gabriel Eriksson bio, Eriksson G AB, web developer Jönköping, Swedish web development company, full-stack development Sweden, React developer"
-        ogImage="/images/gabriel-eriksson-profile.jpg"
+        title="Om Eriksson G AB | Webbutvecklare i Jönköping & Huskvarna"
+        description="Möt Gabriel Eriksson, webbutvecklare och grundare av Eriksson G AB. Vi erbjuder professionell webbutveckling i Jönköping och Huskvarna med fokus på moderna, responsiva och SEO-optimerade webbplatser för företag."
+        keywords="Eriksson G AB, Gabriel Eriksson, webbyrå Jönköping, webbutvecklare Huskvarna, webbdesign företag, bygga hemsida, about us"
+        ogImage="/images/gabriel-eriksson-webbutvecklare-jönköping.jpg"
       />
       
       <div className="about-container">

@@ -20,6 +20,7 @@ import PageTitle from './components/PageTitle';
 import SchemaOrg from './components/SchemaOrg';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import Services from './pages/Services';
 
 // Wrapper component to conditionally render Navbar and Footer
 function AppLayout() {
@@ -43,6 +44,7 @@ function AppLayout() {
         <Route path="/about" element={<AboutMe />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/auth" element={<ResponsiveAuth />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/dailyui/day2" element={<Day2Checkout />} />
         <Route path="/dailyui/day3" element={<MountainAgencyLanding />} />
         <Route path="/dailyui/day4" element={<Calculator />} />

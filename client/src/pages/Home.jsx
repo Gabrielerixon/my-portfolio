@@ -85,10 +85,10 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="Gabriel Eriksson | Full Stack Developer | Eriksson G AB | Web Development Jönköping"
-        description="Eriksson G AB provides professional web development services by Gabriel Eriksson. Specialized in React, Node.js and modern web technologies in Jönköping, Sweden."
-        keywords="Gabriel Eriksson, Eriksson G AB, web development Jönköping, full stack developer, React developer, Node.js developer, Swedish web agency"
-        ogImage="/images/gabriel-eriksson-developer.jpg"
+        title="Eriksson G AB | Professionell Webbutveckling Jönköping & Huskvarna"
+        description="Eriksson G AB erbjuder professionell webbutveckling och webbdesign i Jönköping och Huskvarna. Gabriel Eriksson specialiserar sig inom React, Node.js och moderna webbteknologier för att skapa effektiva och attraktiva webbplatser för företag."
+        keywords="Eriksson G AB, webbyrå Jönköping, webbutvecklare Huskvarna, Gabriel Eriksson, webbdesign, webbsida företag, webbutveckling, bygga webbsida, köp webbsida, designa webbsida"
+        ogImage="/images/eriksson-g-ab-jönköping-webbutveckling.jpg"
       />
       
       <div className="modern-home">

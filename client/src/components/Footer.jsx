@@ -81,6 +81,7 @@ const Footer = () => {
             <h3 style={brightTextStyles.title}>Quick Links</h3>
             <ul className="footer-links">
               <li><Link to="/" style={brightTextStyles.link}>Home</Link></li>
+              <li><Link to="/services" style={brightTextStyles.link}>Services</Link></li>
               <li><Link to="/dailyui" style={brightTextStyles.link}>Projects</Link></li>
               <li><Link to="/about" style={brightTextStyles.link}>About</Link></li>
               <li><Link to="/contact" style={brightTextStyles.link}>Contact</Link></li>
@@ -88,15 +89,14 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Projects column */}
+          {/* Services column - Updated without e-commerce */}
           <div className="footer-column">
-            <h3 style={brightTextStyles.title}>Featured Projects</h3>
+            <h3 style={brightTextStyles.title}>Services</h3>
             <ul className="footer-links">
-              <li><Link to="/dailyui/day4" style={brightTextStyles.link}>Calculator</Link></li>
-              <li><Link to="/dailyui/day5" style={brightTextStyles.link}>User Profile</Link></li>
-              <li><Link to="/dailyui/day6" style={brightTextStyles.link}>Settings Dashboard</Link></li>
-              <li><Link to="/dailyui/day3" style={brightTextStyles.link}>Landing Page</Link></li>
-              <li><Link to="/dailyui/day7" style={brightTextStyles.link}>404 Page</Link></li>
+              <li><Link to="/services#webbutveckling" style={brightTextStyles.link}>Web Development</Link></li>
+              <li><Link to="/services#webbdesign" style={brightTextStyles.link}>Web Design</Link></li>
+              <li><Link to="/services#seo" style={brightTextStyles.link}>SEO Optimization</Link></li>
+              <li><Link to="/services#support" style={brightTextStyles.link}>Maintenance & Support</Link></li>
             </ul>
           </div>
           
@@ -120,7 +120,7 @@ const Footer = () => {
         </div>
         
         <div className="footer-bottom">
-          <p style={brightTextStyles.text}>&copy; {year} Gabriel's Portfolio. All rights reserved.</p>
+          <p style={brightTextStyles.text}>&copy; {year} Eriksson G AB. All rights reserved.</p>
           <p className="credits" style={brightTextStyles.text}>Designed with <span className="heart">♥</span> by Gabriel Eriksson</p>
         </div>
       </div>

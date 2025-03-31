@@ -76,10 +76,10 @@ const Contact = () => {
   return (
     <>
       <SEO 
-        title="Contact Eriksson G AB | Gabriel Eriksson | Web Development Services Jönköping"
-        description="Get in touch with Eriksson G AB for professional web development services in Jönköping, Sweden. Contact Gabriel Eriksson to discuss your next web project or business requirements."
-        keywords="contact Eriksson G AB, Gabriel Eriksson contact, web development Jönköping, hire web developer Sweden, React developer contact, website development quote"
-        ogType="website"
+        title="Kontakta Eriksson G AB | Webbyrå i Jönköping & Huskvarna"
+        description="Kontakta Eriksson G AB - din lokala webbyrå i Jönköping och Huskvarna. Få professionell hjälp med webbutveckling, webbdesign och digitala lösningar för ditt företag."
+        keywords="kontakta Eriksson G AB, webbyrå Jönköping, webbutvecklare Huskvarna, webbdesign kontakt, Gabriel Eriksson kontakt"
+        ogImage="/images/eriksson-g-ab-kontor-jonkoping.jpg"
       />
       
       <div style={{
