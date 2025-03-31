@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 // Remove the HelmetProvider import
 import Navbar from './components/Navbar';
@@ -22,6 +22,17 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Services from './pages/Services';
 
+// Add ScrollToTop component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+}
+
 // Wrapper component to conditionally render Navbar and Footer
 function AppLayout() {
   const location = useLocation();
@@ -33,6 +44,8 @@ function AppLayout() {
 
   return (
     <div className="app-container">
+      {/* Implement ScrollToTop component here */}
+      <ScrollToTop />
       <PageTitle />
       <SchemaOrg /> {/* Added SchemaOrg while keeping PageTitle */}
       {showNavAndFooter && <Navbar />}
