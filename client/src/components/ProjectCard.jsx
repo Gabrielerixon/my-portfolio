@@ -1,47 +1,48 @@
 // src/components/ProjectCard.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectCard.css';
+// If you're using random gradient:
 import { getRandomGradient } from '../utils/gradientUtils';
 
 const ProjectCard = ({ project }) => {
-  const { title, description, link } = project;
-  const [isHovered, setIsHovered] = useState(false);
+  const { title, description, link, isExternal } = project;
   const [gradient, setGradient] = useState('');
 
   useEffect(() => {
-    // Get a random gradient for each card
+    // If you want a random gradient only once on mount
     const bg = getRandomGradient();
     setGradient(bg);
   }, []);
 
+  // Render either an external link or internal route link
+  const renderLink = () => {
+    if (isExternal) {
+      return (
+        <a href={link} className="view-link" target="_blank" rel="noopener noreferrer">
+          Visit Website
+        </a>
+      );
+    } else {
+      return (
+        <Link to={link} className="view-link">
+          View Project
+        </Link>
+      );
+    }
+  };
+
   return (
     <div 
       className="project-card"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      style={{ background: gradient }}
     >
-      <div className="project-card-bg" style={{ background: gradient }}></div>
-      <div className="project-card-content">
+      <div className="card-top">
         <h3>{title}</h3>
         <p>{description}</p>
-        <Link to={link} className="project-card-link">
-          <span>View Challenge</span>
-          <svg 
-            className={`arrow-icon ${isHovered ? 'active' : ''}`} 
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            stroke="currentColor" 
-            strokeWidth="2" 
-            fill="none" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          >
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </Link>
+      </div>
+      <div className="card-bottom">
+        {renderLink()}
       </div>
     </div>
   );

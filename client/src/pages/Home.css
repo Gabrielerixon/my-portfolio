@@ -458,6 +458,23 @@
   background-position: center;
 }
 
+/* Add these CSS rules to your Home.css file */
+
+/* Project preview images for new projects */
+.project-image.wanderlust-preview {
+  background-image: url('../assets/project-previews/wanderlust-preview.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.project-image.fluxsync-preview {
+  background-image: url('../assets/project-previews/fluxsync-preview.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+
 /* Add overlay on hover for better text readability */
 .project-image::after {
   content: '';

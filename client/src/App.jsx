@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-// Remove the HelmetProvider import
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import DailyUIs from './pages/DailyUI';
+import Projects from './pages/Projects'; // Import the new Projects component
 import Contact from './pages/Contact';
 import './styles/layout.css';
 import AboutMe from './pages/AboutMe';
@@ -20,18 +20,6 @@ import PageTitle from './components/PageTitle';
 import SchemaOrg from './components/SchemaOrg';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import Services from './pages/Services';
-
-// Add ScrollToTop component
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  
-  return null;
-}
 
 // Wrapper component to conditionally render Navbar and Footer
 function AppLayout() {
@@ -44,20 +32,18 @@ function AppLayout() {
 
   return (
     <div className="app-container">
-      {/* Implement ScrollToTop component here */}
-      <ScrollToTop />
       <PageTitle />
-      <SchemaOrg /> {/* Added SchemaOrg while keeping PageTitle */}
+      <SchemaOrg />
       {showNavAndFooter && <Navbar />}
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dailyui" element={<DailyUIs />} />
+        <Route path="/projects" element={<Projects />} /> {/* New route for Projects */}
+        <Route path="/dailyui" element={<DailyUIs />} /> {/* Keep this for backward compatibility */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<AboutMe />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/auth" element={<ResponsiveAuth />} />
-        <Route path="/services" element={<Services />} />
         <Route path="/dailyui/day2" element={<Day2Checkout />} />
         <Route path="/dailyui/day3" element={<MountainAgencyLanding />} />
         <Route path="/dailyui/day4" element={<Calculator />} />
@@ -75,7 +61,6 @@ function AppLayout() {
 
 function App() {
   return (
-    // Remove the HelmetProvider wrapper
     <Router>
       <AppLayout />
     </Router>

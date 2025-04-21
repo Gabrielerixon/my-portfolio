@@ -181,49 +181,58 @@ const Home = () => {
               Featured Projects by Eriksson G AB
             </h2>
             
-            <div className="featured-projects">
-              {[
-                {
-                  title: 'Mountaineering Landing Page',
-                  description: 'A landing page I made for a fictional company in the Polish Tatra mountains.',
-                  image: 'mountain-landing-preview',
-                  link: '/dailyui/day3'
-                },
-                {
-                  title: '404 Error Page',
-                  description: 'I created a fun error page, because why not? No one said it had to be boring!',
-                  image: 'error-page-preview',
-                  link: '/dailyui/day7'
-                },
-                {
-                  title: 'User Profile Dashboard',
-                  description: 'A gaming-inspired user profile with detailed stats and a modern interface.',
-                  image: 'profile-dashboard-preview',
-                  link: '/dailyui/day5'
-                }
-              ].map((project, index) => (
-                <div 
-                  key={project.title}
-                  className={`project-preview-card ${scrollPosition > 600 ? 'animate-in' : ''}`}
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className={`project-image ${project.image}`}></div>
-                  <div className="project-info">
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                    <Link to={project.link} className="view-project-btn">
-                      View Project
-                    </Link>
-                  </div>
-                </div>
-              ))}
+          <div className="featured-projects">
+          {[
+            {
+              title: 'Wanderlust Adventures',
+              description: 'Modern travel booking platform with immersive UI and seamless booking experience.',
+              image: 'wanderlust-preview', // You'll need to add this image
+              link: 'https://wanderlust-adventures-mu.vercel.app/',
+              isExternal: true
+            },
+            {
+              title: 'FluxSync',
+              description: 'Sleek SaaS platform mockup featuring intuitive dashboard UI and responsive design.',
+              image: 'fluxsync-preview', // You'll need to add this image
+              link: 'https://fluxsync-five.vercel.app/', 
+              isExternal: true
+            },
+            {
+              title: 'Mountain Agency',
+              description: 'Visually striking landing page for a tourism company specializing in mountain adventures.',
+              image: 'mountain-landing-preview',
+              link: '/dailyui/day3',
+              isExternal: false
+            }
+          ].map((project, index) => (
+            <div 
+              key={project.title}
+              className={`project-preview-card ${scrollPosition > 600 ? 'animate-in' : ''}`}
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
+              <div className={`project-image ${project.image}`}></div>
+              <div className="project-info">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                {project.isExternal ? (
+                  <a href={project.link} className="view-project-btn" target="_blank" rel="noopener noreferrer">
+                    Visit Website
+                  </a>
+                ) : (
+                  <Link to={project.link} className="view-project-btn">
+                    View Project
+                  </Link>
+                )}
+              </div>
             </div>
-            
-            <div className={`view-all-container ${scrollPosition > 800 ? 'animate-in' : ''}`}>
-              <Link to="/dailyui" className="view-all-btn">
-                View All Projects
-              </Link>
-            </div>
+          ))}
+        </div>
+
+        <div className={`view-all-container ${scrollPosition > 800 ? 'animate-in' : ''}`}>
+          <Link to="/projects" className="view-all-btn">
+            View All Projects
+          </Link>
+        </div>
           </div>
         </section>
         

@@ -1,157 +1,105 @@
 // src/components/Navbar.jsx
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { SiFiverr } from 'react-icons/si';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
-
-  const isActive = (path) => {
-    return location.pathname === path ? 'active' : '';
-  };
-  
-  // Close mobile menu when clicking a link
-  const handleLinkClick = () => {
-    if (isMobileMenuOpen) {
-      closeMobileMenu();
-    }
-  };
+  const openMenu = () => setIsMobileMenuOpen(true);
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-container">
-        {/* Left Section: Logo */}
-        <div className="navbar-logo">
-          <Link to="/" onClick={handleLinkClick}>
-            <span className="logo-text">Gabriel.</span>
-          </Link>
-        </div>
-
-        {/* Center Section: Navigation Links (desktop) */}
-        <div className="navbar-links">
-          <ul>
-            <li className={isActive('/')}>
-              <Link to="/" onClick={handleLinkClick}>Home</Link>
-            </li>
-            <li className={isActive('/services')}>
-              <Link to="/services" onClick={handleLinkClick}>Services</Link>
-            </li>
-            <li className={isActive('/dailyui')}>
-              <Link to="/dailyui" onClick={handleLinkClick}>Projects</Link>
-            </li>
-            <li className={isActive('/about')}>
-              <Link to="/about" onClick={handleLinkClick}>About</Link>
-            </li>
-            <li className={isActive('/contact')}>
-              <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Right Section: Social Icons */}
-        <div className="navbar-social">
-          <a 
-            href="https://www.linkedin.com/in/gabriel-eriksson-7b3a9a1b0/" 
-            target="_blank" 
-            rel="noreferrer"
-            className="social-icon"
-          >
-            <FaLinkedin />
-          </a>
-          <a 
-            href="https://www.instagram.com/gabrielerixon/" 
-            target="_blank"
-            rel="noreferrer"
-            className="social-icon"
-          >
-            <FaInstagram />
-          </a>
-          <a 
-            href="http://www.fiverr.com/s/XL3Qbr2" 
-            target="_blank"
-            rel="noreferrer"
-            className="social-icon"
-          >
-            <SiFiverr />
-          </a>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-          <span className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}></span>
-        </div>
+    <nav className="navbar">
+      {/* Left Section: Brand */}
+      <div className="navbar-left">
+        <div className="navbar-logo">Gabriel&apos;s Portfolio</div>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-        <ul>
-          <li className={isActive('/')}>
-            <Link to="/" onClick={handleLinkClick}>Home</Link>
-          </li>
-          <li className={isActive('/services')}>
-            <Link to="/services" onClick={handleLinkClick}>Services</Link>
-          </li>
-          <li className={isActive('/dailyui')}>
-            <Link to="/dailyui" onClick={handleLinkClick}>Projects</Link>
-          </li>
-          <li className={isActive('/about')}>
-            <Link to="/about" onClick={handleLinkClick}>About</Link>
-          </li>
-          <li className={isActive('/contact')}>
-            <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
-          </li>
+      {/* Center Section: Nav Links (desktop) */}
+      <div className="navbar-center">
+        <ul className="navbar-links">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/projects">Projects</Link></li> {/* Updated from DailyUI to Projects */}
+          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/auth">Login</Link></li>
         </ul>
-        <div className="mobile-social">
+      </div>
+
+      {/* Right Section: Social Icons + Hamburger */}
+      <div className="navbar-right">
+        <div className="navbar-socials">
           <a 
             href="https://www.linkedin.com/in/gabriel-eriksson-7b3a9a1b0/" 
             target="_blank" 
             rel="noreferrer"
-            className="social-icon"
           >
-            <FaLinkedin />
+            <FaLinkedin size={24} />
           </a>
           <a 
             href="https://www.instagram.com/gabrielerixon/" 
-            target="_blank"
+            target="_blank" 
             rel="noreferrer"
-            className="social-icon"
           >
-            <FaInstagram />
+            <FaInstagram size={24} />
           </a>
           <a 
             href="http://www.fiverr.com/s/XL3Qbr2" 
-            target="_blank"
+            target="_blank" 
             rel="noreferrer"
-            className="social-icon"
           >
-            <SiFiverr />
+            <SiFiverr size={24} />
           </a>
         </div>
+
+        {/* Hamburger Icon for Mobile */}
+        <button className="hamburger" onClick={openMenu}>
+          &#9776; {/* "trigram for menu" character */}
+        </button>
       </div>
+
+      {/* Full-Screen Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu">
+          <button className="close-button" onClick={closeMenu}>
+            &times;
+          </button>
+
+          <ul className="mobile-nav-links">
+            <li onClick={closeMenu}><Link to="/">Home</Link></li>
+            <li onClick={closeMenu}><Link to="/projects">Projects</Link></li> {/* Updated here too */}
+            <li onClick={closeMenu}><Link to="/contact">Contact</Link></li>
+            <li onClick={closeMenu}><Link to="/auth">Login</Link></li>
+          </ul>
+
+          {/* Larger icons at the bottom */}
+          <div className="mobile-menu-socials">
+            <a 
+              href="https://www.linkedin.com/in/gabriel-eriksson-7b3a9a1b0/" 
+              target="_blank" 
+              rel="noreferrer"
+            >
+              <FaLinkedin size={32} /> 
+            </a>
+            <a 
+              href="https://www.instagram.com/gabrielerixon/" 
+              target="_blank" 
+              rel="noreferrer"
+            >
+              <FaInstagram size={32} />
+            </a>
+            <a 
+              href="http://www.fiverr.com/s/XL3Qbr2" 
+              target="_blank" 
+              rel="noreferrer"
+            >
+              <SiFiverr size={32} />
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
