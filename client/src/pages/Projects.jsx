@@ -1,86 +1,82 @@
 // src/pages/Projects.jsx
 import React, { useEffect, useState } from 'react';
-import ProjectCard from '../components/ProjectCard';
-import './DailyUI.css'; // We'll reuse the DailyUI CSS for now
+import { Link } from 'react-router-dom';
+import './Projects.css';
 
 const Projects = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   
-  // Component style object with spacing fixes
-  const componentStyles = {
-    container: {
-      marginTop: '40px',    
-      paddingTop: '60px',   
-      position: 'relative',
-      zIndex: 1
-    },
-    heading: {
-      position: 'relative',
-      zIndex: 2,
-      paddingBottom: '1rem'
-    }
-  };
-  
   useEffect(() => {
     setIsLoaded(true);
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
   }, []);
   
-  // Project data
+  // Project data - only including the websites
   const projects = [
     {
       title: 'Wanderlust Adventures',
-      description: 'A modern travel booking website with clean UI and interactive elements. Features destination showcases with smooth animations.',
+      description: 'Modern travel booking platform with immersive UI and seamless booking experience.',
+      image: 'wanderlust-preview',
       link: 'https://wanderlust-adventures-mu.vercel.app/',
       isExternal: true
     },
     {
       title: 'FluxSync',
-      description: 'A sleek and intuitive SaaS platform mockup featuring responsive design and modern dashboard UI components.',
-      link: 'https://fluxsync-five.vercel.app/',
+      description: 'Sleek SaaS platform mockup featuring intuitive dashboard UI and responsive design.',
+      image: 'fluxsync-preview',
+      link: 'https://fluxsync-five.vercel.app/', 
       isExternal: true
     },
     {
-      title: 'Mountain Agency Landing',
-      description: 'Landing page for a tourist firm specializing in mountain trips to the Tatra mountains.',
+      title: 'Mountain Agency',
+      description: 'Visually striking landing page for a tourism company specializing in mountain adventures.',
+      image: 'mountain-landing-preview',
       link: '/dailyui/day3',
-      isExternal: false
-    },
-    {
-      title: 'Modern User Profile',
-      description: 'A gaming-inspired user profile dashboard with detailed stats and a modern interface.',
-      link: '/dailyui/day5',
-      isExternal: false
-    },
-    {
-      title: '404 Error Page',
-      description: 'An engaging 404 error page with 3D animation and smooth effects.',
-      link: '/dailyui/day7',
       isExternal: false
     }
   ];
 
   return (
-    <div style={componentStyles.container}>
-      <div className="dailyui-container">
-        <div className="dailyui-hero">
-          <h1 className={`hero-title ${isLoaded ? 'animate-in' : ''}`} style={componentStyles.heading}>
-            Web Development Projects
-          </h1>
-          
-          <p className={`hero-description ${isLoaded ? 'animate-in' : ''}`}>
-            A collection of my web development projects, showcasing responsive design, modern UIs, and interactive experiences. 
-            These projects represent my skills in creating engaging digital solutions.
+    <div className="projects-page">
+      <div className="projects-container">
+        <header className={`projects-header ${isLoaded ? 'animate-in' : ''}`}>
+          <h1>Web Development Projects</h1>
+          <div className="header-underline"></div>
+          <p className="projects-description">
+            A collection of my web development projects, showcasing responsive design, 
+            modern UIs, and interactive experiences. These projects represent my 
+            skills in creating engaging digital solutions.
           </p>
-        </div>
+        </header>
         
-        <div className="dailyui-grid">
-          {projects.map((item, idx) => (
-            <div
-              key={idx}
-              className={`project-card-wrapper ${isLoaded ? 'animate-in' : ''}`}
-              style={{ animationDelay: `${idx * 0.1}s` }}
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div 
+              key={project.title}
+              className={`project-card ${isLoaded ? 'animate-in' : ''}`}
+              style={{ animationDelay: `${index * 200}ms` }}
             >
-              <ProjectCard project={item} />
+              <div className={`project-image ${project.image}`}></div>
+              <div className="project-content">
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+                {project.isExternal ? (
+                  <a 
+                    href={project.link} 
+                    className="project-button" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Visit Website
+                  </a>
+                ) : (
+                  <Link to={project.link} className="project-button">
+                    View Project
+                  </Link>
+                )}
+              </div>
             </div>
           ))}
         </div>

@@ -1,0 +1,189 @@
+/* src/pages/Projects.css */
+.projects-page {
+    padding: 180px 0 80px; /* Increased top padding from 120px to 180px */
+    background-color: var(--bg-color, #f8fafc);
+    min-height: 100vh;
+  }
+  
+  .projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-top: 7rem;
+  }
+  
+  /* Animation classes */
+  .animate-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Header styling */
+  .projects-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .projects-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .header-underline {
+    height: 4px;
+    width: 100px;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    margin: 1rem auto 2rem;
+    border-radius: 2px;
+  }
+  
+  .projects-description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-light, #64748b);
+  }
+  
+  /* Projects grid styling - similar to your homepage featured projects */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  
+  .project-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-image {
+    height: 220px;
+    background-color: #e2e8f0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+  }
+  
+  .project-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,0.2), transparent);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-card:hover .project-image {
+    transform: scale(1.05);
+  }
+  
+  /* Project preview images */
+  .project-image.wanderlust-preview {
+    background-image: url('../assets/project-previews/wanderlust-preview.jpg');
+  }
+  
+  .project-image.fluxsync-preview {
+    background-image: url('../assets/project-previews/fluxsync-preview.jpg');
+  }
+  
+  .project-image.mountain-landing-preview {
+    background-image: url('../assets/project-previews/mountain-landing-preview.png');
+  }
+  
+  .project-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .project-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--dark-color, #0f172a);
+  }
+  
+  .project-content p {
+    color: var(--text-light, #64748b);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+  
+  .project-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #6366f1;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    align-self: flex-start;
+  }
+  
+  .project-button:hover {
+    background-color: #4f46e5;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .projects-page {
+      padding: 150px 0 60px; /* Increased top padding from 100px to 150px for mobile */
+    }
+    
+    .projects-header h1 {
+      font-size: 2.5rem;
+    }
+    
+    .projects-description {
+      font-size: 1.1rem;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+  
+  /* Additional responsive padding adjustments */
+  @media (max-width: 480px) {
+    .projects-page {
+      padding: 120px 0 40px; /* Slightly less padding on very small screens */
+    }
+  }
