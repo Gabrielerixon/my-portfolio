@@ -194,16 +194,25 @@
 
 .hero-graphic {
   flex: 1;
-  position: relative;
+  position: relative; /* Keep for absolute positioning of decorative elements */
   height: 500px;
   min-width: 40%;
+  /* --- MODIFICATION START --- */
+  /* Use Flexbox to center the code block */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* --- MODIFICATION END --- */
 }
 
+/* Decorative elements remain absolutely positioned relative to hero-graphic */
 .graphic-element {
   position: absolute;
   background: var(--gradient-primary);
   opacity: 0.8;
   filter: blur(2px);
+  /* Ensure they are behind the code block */
+  z-index: 1;
 }
 
 .circle {
@@ -237,10 +246,17 @@
 }
 
 .code-block {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* --- MODIFICATION START --- */
+  /* Remove absolute positioning properties */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+
+  /* Use relative positioning for stacking context and z-index */
+  position: relative;
+  /* --- MODIFICATION END --- */
+
   background-color: var(--dark-color);
   padding: 20px;
   border-radius: 8px;
@@ -248,7 +264,10 @@
   font-family: 'Fira Code', monospace;
   box-shadow: var(--box-shadow);
   width: 280px;
-  z-index: 2;
+  /* Add max-width for smaller screens */
+  max-width: calc(100% - 40px); /* Ensure some padding from edges */
+  z-index: 2; /* Ensure it's above decorative elements */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .code-block pre {
@@ -473,8 +492,6 @@
   background-position: center;
 }
 
-
-
 /* Add overlay on hover for better text readability */
 .project-image::after {
   content: '';
@@ -629,16 +646,16 @@
   .hero-title {
     font-size: 3.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 2rem;
   }
-  
+
   .about-preview {
     flex-direction: column;
     gap: 3rem;
   }
-  
+
   .about-text, .about-image {
     width: 100%;
   }
@@ -652,46 +669,67 @@
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
-    padding: 6rem;
+    /* Adjusted padding for mobile */
+    padding: 4rem 5% 2rem;
     text-align: center;
+    min-height: auto; /* Allow height to adjust */
   }
-  
+
   .hero-content {
     max-width: 100%;
     margin-bottom: 3rem;
+    margin-top: 1rem; /* Reduced top margin */
   }
-  
+
   .hero-cta {
     justify-content: center;
   }
-  
+
   .hero-title {
     font-size: 3rem;
-    margin-top: 2rem;
+    margin-top: 1rem; /* Reduced top margin */
   }
-  
+
   .hero-subtitle {
     font-size: 1.8rem;
   }
-  
+
+  /* --- MODIFICATION START --- */
+  .hero-graphic {
+    /* Adjust height and add padding for mobile */
+    height: auto; /* Let content determine height */
+    min-height: 250px; /* Ensure some minimum height */
+    width: 100%; /* Take full width */
+    min-width: unset; /* Remove min-width */
+    padding: 2rem 0; /* Add vertical padding */
+    margin-top: 2rem; /* Add space above graphic */
+  }
+
+  .code-block {
+     /* No specific changes needed here now, max-width handles sizing */
+     /* You could reduce font-size if needed */
+     /* font-size: 0.8rem; */
+  }
+  /* --- MODIFICATION END --- */
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .skills-grid,
   .featured-projects {
     grid-template-columns: 1fr;
   }
-  
+
   .about-text h2::after {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .about-text {
     text-align: center;
   }
-  
+
   .contact-cta h2 {
     font-size: 2.5rem;
   }
@@ -702,20 +740,33 @@
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .primary-btn, .secondary-btn {
     width: 100%;
   }
-  
+
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.5rem;
   }
-  
+
   .contact-cta h2 {
     font-size: 2rem;
+  }
+
+  /* Further reduce padding on very small screens */
+  .hero-section {
+    padding: 3rem 5% 1rem;
+  }
+
+  .code-block {
+      padding: 15px; /* Slightly reduce padding */
+  }
+
+  .code-block pre {
+      font-size: 0.8rem; /* Make code text smaller */
   }
 }
