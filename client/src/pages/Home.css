@@ -673,6 +673,7 @@
     padding: 4rem 5% 2rem;
     text-align: center;
     min-height: auto; /* Allow height to adjust */
+    margin-top: 4rem;
   }
 
   .hero-content {
@@ -705,11 +706,7 @@
     margin-top: 2rem; /* Add space above graphic */
   }
 
-  .code-block {
-     /* No specific changes needed here now, max-width handles sizing */
-     /* You could reduce font-size if needed */
-     /* font-size: 0.8rem; */
-  }
+  
   /* --- MODIFICATION END --- */
 
   .section-title {
@@ -760,6 +757,7 @@
   /* Further reduce padding on very small screens */
   .hero-section {
     padding: 3rem 5% 1rem;
+    margin-top: 4rem;
   }
 
   .code-block {
